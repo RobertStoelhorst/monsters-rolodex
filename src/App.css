@@ -15,6 +15,16 @@ body {
   color: aliceblue;
 }
 
+/* This method h1:nth-child(1) is one way we may target an element without a specific className */
 .App h1:nth-child(1) {
+  margin: 75px 0 50px 0;
+  font-size: 4em;
+  font-family: "Bigelow Rules";
+  letter-spacing: 0.05em;
+  color: #0ccac4;
+}
+
+.app-title {
+  /* margin: 75px 0 50px 0; */
   font-size: 4em;
 }
