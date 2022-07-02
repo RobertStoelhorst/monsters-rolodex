@@ -29,7 +29,7 @@ class Card extends Component {
     return (
       <div className="card-container">
         <img
-          style={{ color: 'rgb(214, 45, 45)' }}
+          className="error-text"
           src={error.img || `https://robohash.org/${img}?set=set2&size=200x200`}
           alt={error.img || text}
         />

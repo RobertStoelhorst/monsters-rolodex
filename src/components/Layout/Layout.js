@@ -14,7 +14,7 @@ export class Layout extends Component {
         }}
       >
         <h3>Layout</h3>
-        <p>placeholder for you layout component</p>
+        <p>placeholder for a layout component</p>
       </div>
     );
   }
