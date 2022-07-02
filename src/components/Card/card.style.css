@@ -1,0 +1,32 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+  cursor: pointer;
+
+  background-color: rgba(19, 152, 185, 0.204);
+  border: 1px solid rgba(255, 255, 255, 0.213);
+  box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.107);
+  border-radius: 1.2em;
+  padding: 0.5em 2em;
+  margin: 3em;
+  width: 200px;
+  max-width: 200px;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.error-text {
+  color: rgb(214, 45, 45);
+}
+
+.title-text {
+  color: pink;
+}
+
+.body-text {
+  color: pink;
+  font-weight: 600;
+}

@@ -1,0 +1,22 @@
+.search-box {
+  -webkit-appearance: none;
+  background-color: rgb(209, 223, 235);
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  padding: 10px;
+  width: 15em;
+  line-height: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  caret-color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.search-box:focus {
+  background-color: rgb(42, 167, 69);
+  color: aliceblue;
+  font-size: 22px;
+  font-weight: 600;
+}

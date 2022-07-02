@@ -1,25 +1,67 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import SearchBox from './components/SearchBox/SearchBox';
+import CardList from './components/CardList/CardList';
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      monsters: [],
+      searchField: '',
+    };
+  }
+
+  // COMPONENT LIFE CYCLE METHODS
+  // componentDidCatch
+  // componentDidMount
+  // componentDidUpdate
+  // componentWillUnmount
+
+  componentDidMount() {
+    // console.info('componentDidMount');
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((users) =>
+        this.setState(
+          () => {
+            return { monsters: users };
+          },
+          () => {
+            // console.log(this.state);
+          }
+        )
+      );
+  }
+  onSearchChange = (e) => {
+    const searchField = e.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  };
+
+  render() {
+    const { monsters, searchField } = this.state;
+    const { onSearchChange } = this;
+
+    const filteredMonsters = monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(searchField);
+    });
+    return (
+      <div className="App">
+        <h1 title="Search Monsters App">Search Monsters</h1>
+
+        <SearchBox
+          className="monsters-search-box"
+          onChangeHandler={onSearchChange}
+          placeholder="Search Monsters"
+        />
+        <CardList monsters={filteredMonsters} />
+      </div>
+    );
+  }
 }
 
 export default App;
