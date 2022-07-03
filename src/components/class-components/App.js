@@ -12,7 +12,7 @@ class App extends Component {
       monsters: [],
       searchField: '',
       loading: false,
-      connectionError: false,
+      reqError: false,
     };
   }
 
@@ -24,28 +24,39 @@ class App extends Component {
 
   componentDidMount() {
     // console.info('componentDidMount');
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((users) =>
-        this.setState(
-          () => {
-            return { monsters: users };
-          },
-          () => {
-            // console.log(this.state);
-          }
-        )
-      )
-      .catch((e) => {
-        this.setState(
-          () => {
-            return { connectionError: e };
-          },
-          () => {
-            // console.log(this.state);
-          }
+    this.setState(
+      () => {
+        return { loading: true };
+      },
+      () => {
+        console.log(this.state.loading);
+      }
+    );
+
+    try {
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then((res) => res.json())
+        .then((users) =>
+          this.setState(
+            () => {
+              return { monsters: users, loading: false };
+            },
+            () => {
+              // console.log(this.state);
+            }
+          )
         );
-      });
+    } catch (e) {
+      this.setState(
+        () => {
+          console.log(e);
+          return { reqError: true };
+        },
+        () => {
+          // console.log(this.state);
+        }
+      );
+    }
   }
 
   onSearchChange = (e) => {
@@ -56,8 +67,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.connectionError);
-
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
 
@@ -75,7 +84,11 @@ class App extends Component {
           onChangeHandler={onSearchChange}
           placeholder="Search Monsters"
         />
-        <CardList monsters={filteredMonsters} />
+        {this.state.loading ? (
+          <div>Loading.......</div>
+        ) : (
+          <CardList monsters={filteredMonsters} />
+        )}
       </div>
     );
   }

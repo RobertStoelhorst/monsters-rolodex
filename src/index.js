@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
-import Layout from './components/Layout/Layout';
+// import Layout from './components/Layout/Layout';
+import AppExperience from './components/Experience';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { store } from './services/store';
-import { Provider as StoreProvider } from 'react-redux';
+import { Provider as StateProvider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <StoreProvider store={store}>
-      <Layout />
-    </StoreProvider>
+    <StateProvider store={store}>
+      <ErrorBoundary>
+        <AppExperience />
+      </ErrorBoundary>
+    </StateProvider>
   </React.StrictMode>
 );
 
