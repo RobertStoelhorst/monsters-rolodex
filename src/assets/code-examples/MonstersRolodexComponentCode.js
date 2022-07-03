@@ -5,22 +5,22 @@ const searchBox = (
     <div>
       <span className="keyword">import</span>
       <span className="operator"> React,</span>
-      <span> {`{`}</span>
+      <span className="function"> {`{`}</span>
       <span className="operator"> Component </span>
-      <span> {`}`}</span>
-      <span> from</span>
+      <span className="function"> {`}`}</span>
+      <span className="keyword"> from</span>
       <span className="string"> 'react'</span>
     </div>
     <div>
       <span className="keyword">import</span>
       <span className="operator"> IconButton</span>
-      <span> from</span>
+      <span className="keyword"> from</span>
       <span className="string"> '@mui/material/IconButton'</span>
     </div>
     <div>
       <span className="keyword">import</span>
       <span className="operator"> CodeIcon</span>
-      <span> from</span>
+      <span className="keyword"> from</span>
       <span className="string"> '@mui/icons-material/Code'</span>
     </div>
     <div>
@@ -37,7 +37,7 @@ const searchBox = (
       <span className="component"> SearchBox</span>
       <span className="declaration"> extends</span>
       <span className="component"> Component</span>
-      <span> {`{`}</span>
+      <span className="function"> {`{`}</span>
       <br />
       <span className="declaration ml1">constructor</span>
       <span className="function"> {`(`}</span>
@@ -56,7 +56,7 @@ const searchBox = (
       <span className="string">{`{`}</span>
       <br />
       <span className="operator ml3">codeModal: </span>
-      <span className="declaration">true</span>
+      <span className="declaration">false</span>
       <span>,</span>
       <br />
       <span className="string ml2">{`}`}</span>;
