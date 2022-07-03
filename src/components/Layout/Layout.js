@@ -2,14 +2,9 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux';
 import { setHome } from '../../services/reducers/appSlice';
-import AppExperience from '../Experience';
 
 const Layout = () => {
-  // const home = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
-  // const homepage = () => {
-  //   // setHome;
-  // };
 
   return (
     <div>
@@ -33,7 +28,6 @@ const Layout = () => {
         </Button>
         <p>placeholder for a layout component</p>
       </div>
-      <AppExperience />
     </div>
   );
 };
