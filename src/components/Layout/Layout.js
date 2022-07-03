@@ -1,8 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Button from '@mui/material/Button';
+import { useDispatch } from 'react-redux';
+import { setHome } from '../../services/reducers/appSlice';
+import AppExperience from '../Experience';
 
-export class Layout extends Component {
-  render() {
-    return (
+const Layout = () => {
+  // const home = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  // const homepage = () => {
+  //   // setHome;
+  // };
+
+  return (
+    <div>
       <div
         style={{
           display: 'flex',
@@ -13,11 +23,19 @@ export class Layout extends Component {
           padding: '5px 30px',
         }}
       >
-        <h3>Layout</h3>
+        <Button
+          variant="contained"
+          size="large"
+          color="success"
+          onClick={() => dispatch(setHome())}
+        >
+          Home
+        </Button>
         <p>placeholder for a layout component</p>
       </div>
-    );
-  }
-}
+      <AppExperience />
+    </div>
+  );
+};
 
 export default Layout;

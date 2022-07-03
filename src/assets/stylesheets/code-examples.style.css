@@ -1,0 +1,116 @@
+.code-block {
+  text-align: left;
+  background-color: rgba(28, 28, 28, 0.7);
+  font-size: medium;
+  margin: 0 auto;
+  padding: 0.8em;
+  max-width: 600px;
+  border: 0.1em solid rgba(100, 100, 100, 0.7);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+}
+
+.tag {
+  color: rgb(116, 115, 116);
+}
+
+.keyword {
+  color: rgba(201, 120, 186);
+}
+
+.operator {
+  color: rgb(127, 217, 255);
+}
+
+.string {
+  color: rgb(206, 128, 105);
+}
+
+.component {
+  color: rgb(0, 189, 160);
+}
+
+.declaration {
+  color: rgb(51, 147, 211);
+}
+
+.props {
+  color: rgb(0, 177, 243);
+}
+
+.dynamic {
+  color: rgb(80, 193, 255);
+}
+
+.function {
+  color: rgb(216, 215, 158);
+}
+
+.interpolation {
+  color: rgb(226, 94, 207);
+}
+
+.brace {
+  color: rgb(212, 0, 92);
+}
+
+.number {
+  color: rgb(181, 206, 168);
+}
+
+.comment {
+  color: rgb(107, 153, 85);
+}
+
+.ml0 {
+  margin-left: 0.3em;
+}
+
+.ml1 {
+  margin-left: 1em;
+}
+
+.ml2 {
+  margin-left: 2em;
+}
+
+.ml3 {
+  margin-left: 3em;
+}
+
+.ml4 {
+  margin-left: 4em;
+}
+
+.ml5 {
+  margin-left: 5em;
+}
+
+.ml6 {
+  margin-left: 6em;
+}
+
+.mr0 {
+  margin-right: 0.3em;
+}
+
+.mr1 {
+  margin-right: 1em;
+}
+
+.mr2 {
+  margin-right: 2em;
+}
+
+.mr3 {
+  margin-right: 3em;
+}
+
+.mr4 {
+  margin-right: 4em;
+}

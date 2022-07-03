@@ -15,6 +15,21 @@ body {
   color: aliceblue;
 }
 
+.experience-container {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  /* font-weight: 900; */
+}
+
+.btn-group Button {
+  padding: 20px;
+  font-size: large;
+}
+
+.btn-group {
+  margin-top: 5em;
+}
+
 /* This method h1:nth-child(1) is one way we may target an element without a specific className */
 .App h1:nth-child(1) {
   margin: 75px 0 50px 0;

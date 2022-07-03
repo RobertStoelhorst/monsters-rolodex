@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import './App.css';
+import '../../assets/stylesheets/App.style.css';
 
-import SearchBox from './components/SearchBox/SearchBox';
-import CardList from './components/CardList/CardList';
+import SearchBox from '../class-components/SearchBox/SearchBox';
+import CardList from '../class-components/CardList/CardList';
 
 class App extends Component {
   constructor() {
@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       monsters: [],
       searchField: '',
+      loading: false,
+      connectionError: false,
     };
   }
 
@@ -33,8 +35,19 @@ class App extends Component {
             // console.log(this.state);
           }
         )
-      );
+      )
+      .catch((e) => {
+        this.setState(
+          () => {
+            return { connectionError: e };
+          },
+          () => {
+            // console.log(this.state);
+          }
+        );
+      });
   }
+
   onSearchChange = (e) => {
     const searchField = e.target.value.toLocaleLowerCase();
     this.setState(() => {
@@ -43,6 +56,8 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.connectionError);
+
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
 
