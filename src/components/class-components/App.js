@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import '../../assets/stylesheets/App.style.css';
+import { useDispatch } from 'react-redux';
+import { setHome } from '../../services/reducers/appSlice';
 
+import Spinner from '../global-components/Spinner/Spinner ';
 import SearchBox from '../class-components/SearchBox/SearchBox';
 import CardList from '../class-components/CardList/CardList';
 
@@ -29,7 +32,7 @@ class App extends Component {
         return { loading: true };
       },
       () => {
-        console.log(this.state.loading);
+        // console.log(this.state.loading);
       }
     );
 
@@ -69,7 +72,6 @@ class App extends Component {
   render() {
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
-
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(searchField);
     });
@@ -78,17 +80,12 @@ class App extends Component {
         <h1 className="app-title" title="Search Monsters App">
           Search Monsters
         </h1>
-
         <SearchBox
           className="monsters-search-box"
           onChangeHandler={onSearchChange}
           placeholder="Search Monsters"
         />
-        {this.state.loading ? (
-          <div>Loading.......</div>
-        ) : (
-          <CardList monsters={filteredMonsters} />
-        )}
+        <CardList loading={this.state.loading} monsters={filteredMonsters} />
       </div>
     );
   }
