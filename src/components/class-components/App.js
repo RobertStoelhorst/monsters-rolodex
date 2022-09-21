@@ -29,7 +29,7 @@ class App extends Component {
         return { loading: true };
       },
       () => {
-        console.log(this.state.loading);
+        // console.log(this.state.loading);
       }
     );
 
