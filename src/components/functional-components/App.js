@@ -7,13 +7,23 @@ import Spinner from '../global-components/spinner';
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [searchField, setSearchField] = useState('');
-  const filteredMonsters = {};
-  console.log({ searchField });
+  const [monsters, setMonsters] = useState([]);
+  // console.log({ searchField });
+
+  console.log('render');
+
+  // fetch('https://jsonplaceholder.typicode.com/users')
+  //   .then((res) => res.json())
+  //   .then((users) => setMonsters(users));
 
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
   };
+
+  const filteredMonsters = monsters.filter((monster) => {
+    return monster.name.toLowerCase().includes(searchField);
+  });
 
   return (
     <div className="App">
