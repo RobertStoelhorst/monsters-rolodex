@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IconButton from '@mui/material/IconButton';
 import CodeIcon from '@mui/icons-material/Code';
 import Collapse from '@mui/material/Collapse';
-import { searchBox } from '../../../assets/code-examples/MonstersRolodexComponentCode';
+import { searchBox } from '../../../assets/class-code-examples/MonstersRolodexClassSearchBoxComponentCode';
 import '../../../assets/stylesheets/SearchBox.styles.css';
 
 export class SearchBox extends Component {
@@ -32,7 +32,7 @@ export class SearchBox extends Component {
       );
     };
     return (
-      <div>
+      <>
         <div className="search-box-container">
           <input
             className={`search-box ${this.props.className}`}
@@ -53,7 +53,7 @@ export class SearchBox extends Component {
             {searchBox}
           </Collapse>
         </div>
-      </div>
+      </>
     );
   }
 }

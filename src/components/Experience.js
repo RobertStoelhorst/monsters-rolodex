@@ -40,7 +40,7 @@ const AppExperience = () => {
               </IconButton>
             </span>{' '}
             code icon below a component in the browser this will open a code
-            snippet for that relative component
+            snippet for the relevant component
           </p>
           {/* <AppClassApp /> */}
           <div className="btn-group">

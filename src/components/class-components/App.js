@@ -3,7 +3,7 @@ import '../../assets/stylesheets/App.style.css';
 
 import SearchBox from '../class-components/SearchBox/SearchBox';
 import CardList from '../class-components/CardList/CardList';
-
+import Spinner from '../global-components/spinner';
 class App extends Component {
   constructor() {
     super();
@@ -85,7 +85,7 @@ class App extends Component {
           placeholder="Search Monsters"
         />
         {this.state.loading ? (
-          <div>Loading.......</div>
+          <Spinner />
         ) : (
           <CardList monsters={filteredMonsters} />
         )}
