@@ -5,7 +5,11 @@ import Card from '../Card/Card';
 
 const CardList = (props) => {
   const { monsters } = props;
-  console.log(monsters);
+  console.log(
+    monsters.length === 0
+      ? 'fetching...  https://jsonplaceholder.typicode.com/users'
+      : { 'fetch result': monsters }
+  );
 
   return (
     <div className="card-list">

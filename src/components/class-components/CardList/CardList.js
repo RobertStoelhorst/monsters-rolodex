@@ -8,7 +8,7 @@ class CardList extends Component {
     const { monsters } = this.props;
     console.log(
       monsters.length === 0
-        ? 'fetching from https://jsonplaceholder.typicode.com/users'
+        ? 'fetching... https://jsonplaceholder.typicode.com/users'
         : { 'fetch result': monsters }
     );
 
