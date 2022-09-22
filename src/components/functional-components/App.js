@@ -6,11 +6,13 @@ import Spinner from '../global-components/spinner';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
+  const [searchField, setSearchField] = useState('');
   const filteredMonsters = {};
+  console.log({ searchField });
 
   const onSearchChange = (e) => {
-    const searchField = e.target.value.toLocaleLowerCase();
-    return { searchField };
+    const searchFieldString = e.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
   };
 
   return (

@@ -10,13 +10,14 @@ import { Provider as StateProvider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <StateProvider store={store}>
-      <ErrorBoundary>
-        <AppExperience />
-      </ErrorBoundary>
-    </StateProvider>
-  </React.StrictMode>
+  // React.StrictMode will cause the double up of console logs... StrictMode calls render methods twice so that if you code would break, it breaks more obviously during development.
+  // <React.StrictMode>
+  <StateProvider store={store}>
+    <ErrorBoundary>
+      <AppExperience />
+    </ErrorBoundary>
+  </StateProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

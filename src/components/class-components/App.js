@@ -62,6 +62,7 @@ class App extends Component {
   onSearchChange = (e) => {
     const searchField = e.target.value.toLocaleLowerCase();
     this.setState(() => {
+      // console.log({ searchField });
       return { searchField };
     });
   };
